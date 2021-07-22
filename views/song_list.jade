@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+
+    h1 #{title}
+    div(class="box_add")
+        div(class="boton_add") 
+            a(href="song/create") + Add
+
+    if !songs.length
+        p(style="margin-top: 0.5em; text-align: center;") There are no Songs
+        
+        iframe(src="https://giphy.com/embed/Ho5KRBnCEQcLhLo8hB" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen)
+
+    div(class="container_songs")    
+        each song, index in songs
+            p #{index+1}.- 
+                a(href=song.url) #{song.name}

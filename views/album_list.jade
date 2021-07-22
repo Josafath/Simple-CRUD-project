@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+
+    h1 #{title}
+    div(class="box_add")
+        div(class="boton_add") 
+            a(href="album/create") + Add
+
+    if !albums.length
+        p(style="margin-top: 0.5em; text-align: center;") There are no Artists
+        
+        iframe(src="https://giphy.com/embed/Ho5KRBnCEQcLhLo8hB" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen)
+    
+    div(class="container_things")    
+        each album in albums
+            div(class="mycard_album")
+                div(class="img")
+                    img(src= album.img_url alt="Album Image")
+                div(class="text_2") 
+                    h4 #{album.name} 
+                    p #{album.date_release.getFullYear()}
+                    a(href=album.url class="btn btn-dark" role="button") Details
+                    
+        
+                
+
+                

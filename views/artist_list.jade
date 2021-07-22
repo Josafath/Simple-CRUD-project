@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+
+    h1 #{title}
+    div(class="box_add")
+        div(class="boton_add") 
+            a(href="artist/create") + Add
+
+    div(class="container_things")    
+        each artist in artists
+            div(class="mycard")
+                div 
+                    img(src= artist.img_url alt="Artist Image")
+                div(class="text") 
+                    h5 #{artist.name} (#{artist.date_of_birth ? artist.date_of_birth.toISOString().split('T')[0] : ''} - #{artist.date_of_death ? artist.date_of_death.toISOString().split('T')[0] : ''})
+                    a(href=artist.url class="btn btn-dark" role="button") Details
+                    
+                
+
+        else
+            li(style="margin-top: 0.5em;") There are no Artists
+            li 
+                iframe(src="https://giphy.com/embed/Ho5KRBnCEQcLhLo8hB" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen)
+                

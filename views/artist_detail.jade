@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+  div(class="webos")
+    div(class="img_details")
+      img(src=artist.img_url alt="Artist Image")
+    div(class="text1")
+      h1 #{artist.name}
+      if !artist.date_of_death
+        p #{(2021-artist.date_of_birth.getFullYear())} years old.
+      else
+        p #{artist.date_of_birth ? artist.date_of_birth.toISOString().split('T')[0] : ''} - #{artist.date_of_death ? artist.date_of_death.toISOString().split('T')[0] : ''}
+      
+      div(class="botones_delete_update")
+        a(href=artist.url+"/delete" class="btn btn-danger" role="button") Delete 
+        
+        a(href=artist.url+"/update" class="btn btn-info" role="button") Update 
+
+  hr
+  h2 Albums:
+
+  each album in albums
+    div(class="mycard_album")
+      div(class="img")
+        img(src= album.img_url alt="Album Image")
+      div(class="text_2") 
+        h4 #{album.name} 
+        p #{album.date_release.getFullYear()}
+        a(href=album.url class="btn btn-dark" role="button") Details
+
+  else 
+    p(style="text-align: center;") There're no Albums

@@ -1,0 +1,261 @@
+body {
+    padding-left: 4em;
+    margin-top: 4em;
+    font-family: 'Roboto';
+}
+
+.sidenav {
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fc5296;
+    background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+    overflow-x: hidden;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: hsl(0, 0%, 20%);
+    display: block;
+    position: relative;
+}
+
+.sidenav a:hover:after {
+    color: hsl(0, 0%, 0%);
+    width: 100%;
+    left: 0;
+    background: hsl(0, 0%, 100%);
+}
+
+.sidenav a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+
+.main {
+    margin-left: 260px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    margin-right: 3em;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.boton_add {
+    width: fit-content;
+    height: auto;
+    padding: 0px 14px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.boton_add a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.box_add {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.container_things {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container_songs {
+    margin-top: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mycard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mycard_genres {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.shit_item {
+    padding: 12px;
+    margin: 0.5em;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.text {
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+.text1 {
+    padding-left: 4em;
+    font-family: serif;
+    width: inherit;
+}
+
+.mycard img {
+    width: 90px;
+    height: 100px;
+}
+
+.img_details img {
+    width: 200px;
+    height: auto;
+    border-radius: 1em;
+    text-align: center;
+}
+
+.webos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.mycard_album {
+    font-family: serif;
+    padding: 0.5em;
+    width: 30%;
+    height: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.botones_delete_update {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.delete_container {
+    margin-top: 4em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mycard_album img {
+    width: 80%;
+    height: 40%;
+    margin: 1.5% 10%;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+}
+
+@media screen and (max-width:640px),
+screen and (max-height: 340px) {
+    .sidenav {
+        width: 140px;
+    }
+    .sidenav a {
+        font-size: 12px;
+    }
+    .main {
+        margin-left: 80px;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 14px;
+        text-align: center;
+    }
+    .mycard_album {
+        width: 100%;
+    }
+    .text_2 {
+        font-size: 10px;
+    }
+    a {
+        font-size: 14px;
+    }
+    .text1 {
+        margin-top: 1em;
+        padding-left: 0;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    .webos {
+        flex-flow: column wrap;
+    }
+    .img_details img {
+        width: 140px;
+    }
+    .container_things {
+        margin-left: 100px;
+    }
+    .mycard {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .mycard img {
+        margin-top: 1rem;
+    }
+    h5 {
+        margin-top: 0.5em;
+        font-size: 1rem;
+    }
+    .shit_item {
+        padding: 0 12px;
+        margin: 0.5rem;
+    }
+}

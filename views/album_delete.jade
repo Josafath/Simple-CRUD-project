@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+
+    h1 #{title}
+
+
+
+    if songs.length     
+        h2 You have to delete all this songs to remove the album: 
+        hr
+        div(class="container_songs")   
+            each song, index in songs
+                p #{index+1}. 
+                    a(href=song.url) #{song.name}
+
+    else 
+        div(class="delete_container")
+            div
+                h1 Are you sure to Delete #{album.name.toUpperCase()} ?
+            form(action="", method="POST") 
+                div(class ="form-group")
+                    div(class="input-group mb-3")
+                        input(type="text" class="form-control" name="password" placeholder="Enter the Password" aria-label="Recipient's username" aria-describedby="basic-addon2")
+                        div(class="input-group-append")
+                            button(class="btn btn-danger" type="submit") Delete 
+                    div 
+                        a(href=album.url class="btn btn-outline-dark" role="button") Cancelar

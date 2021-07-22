@@ -1,0 +1,14 @@
+extends layout
+
+block content 
+
+    h1 Update #{genre.name}
+
+    form(method = "POST" action= "")
+        div(class ="form-group")
+            label(for="name")
+                h5 Name: 
+            input(type="text", class="form-control" name="name" required= true value=genre.name)
+            br
+             
+            button(type="submit" class="btn btn-info") Update

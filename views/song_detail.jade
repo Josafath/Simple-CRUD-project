@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    h2(style="text-align:center;") #[strong Name: #{song.name}] 
+    h2 Lyrics:
+    
+    p(style="margin: 3% 20%; text-align:center;") #{song.lyrics}
+
+    div(class="botones_delete_update")
+        a(href=song.url+"/delete" class="btn btn-danger" role="button") Delete 
+        
+        a(href=song.url+"/update" class="btn btn-info" role="button") Update 
+
+    p(style="margin-top: 1em;") #[strong] 
+        a(href="https://www.musixmatch.com/") Lyrics powered by musixmatch.

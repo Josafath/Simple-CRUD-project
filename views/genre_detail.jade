@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+    h1 Genre: #{genre.name}
+    div(class="botones_delete_update")
+        a(href=genre.url+"/delete" class="btn btn-danger" role="button") Delete 
+        
+        a(href=genre.url+"/update" class="btn btn-info" role="button") Update 
+
+    h2(style="margin-top: 1em;") Albums with this genre: 
+
+    if !albums.length
+        h1(style="text-align:center; margin-top: 4em;") There´re no albums related with this genre
+
+    div(class="container_things")    
+        each album in albums
+            div(class="mycard_album")
+                div(class="img")
+                    img(src= album.img_url alt="Album Image")
+                div(class="text_2") 
+                    h4 #{album.name} 
+                    p #{album.date_release.getFullYear()}
+                    a(href=album.url class="btn btn-dark" role="button") Details

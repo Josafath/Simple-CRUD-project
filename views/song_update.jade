@@ -1,0 +1,27 @@
+extends layout 
+
+block content 
+    h2 Update #{title}
+    form(method = "POST" action= "")
+        div(class ="form-group")
+            label(for="name")
+                h6 Name:
+            input(type="text" class="form-control" name="name" id="title_id" required=true value= song.name)
+                
+            label(for="artist_name")
+                h6 Artist Name:
+            select(type='select' name="artist_name" class="form-control" id="artist" required=true)
+                each artist in artists
+                    option(value=artist.name) #{artist.name}
+            
+            label(for="album")
+                h6 Album:
+            select(type='select' name="album" class="form-control" id="album" required=true)
+                each album in albums
+                    option(value=album._id) #{album.name}
+            br
+            label(for="lyric")
+                h6 Lyrics:
+            textarea(class="form-control" name="lyric" id="lyric" rows="4") #{song.lyrics}
+            br
+            button(type="submit" class="btn btn-info") Update

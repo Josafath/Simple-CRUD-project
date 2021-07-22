@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  div(class="webos")
+    div(class="img_details")
+      img(src=album.img_url alt="Album Image")
+    div(class="text1")
+      h1 #{album.name}
+      p #{album.date_release.getFullYear()}
+      div(class="botones_delete_update")
+        a(href=album.url+"/delete" class="btn btn-danger" role="button") Delete 
+        
+        a(href=album.url+"/update" class="btn btn-info" role="button") Update 
+      
+  hr
+  h2 Songs:
+  div(class="container_songs")   
+    each song, index in songs
+      p #{index+1}. 
+        a(href=song.url) #{song.name}
+
+    else 
+      p(style="text-align: center;") There're no Songs

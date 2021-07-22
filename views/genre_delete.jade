@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+
+    h1 #{title}
+
+    div(class="delete_container")
+        div
+            h1 Are you sure to Delete #{genre.name.toUpperCase()} ?
+        form(action="", method="POST") 
+            div(class ="form-group")
+                div(class="input-group mb-3")
+                    input(type="text" class="form-control" name="password" placeholder="Enter the Password" aria-label="Recipient's username" aria-describedby="basic-addon2")
+                    div(class="input-group-append")
+                        button(class="btn btn-danger" type="submit") Delete 
+                div 
+                    a(href=genre.url class="btn btn-outline-dark" role="button") Cancelar

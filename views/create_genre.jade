@@ -1,0 +1,12 @@
+extends layout 
+
+block content
+    h1 #{title}
+
+    form(method = "POST" action= "create")
+        div(class ="form-group")
+            label(for="first_name")
+                h6 Genre
+            input(type="text" class="form-control" name="name" id="genre_name" placeholder="E.g: Pop, R&B...")
+            br
+            button(type="submit" class="btn btn-success") Add Genre
