@@ -15,7 +15,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-const mongodb = 'mongodb+srv://jossa:josafath1234@cluster0.olcxk.mongodb.net/music_db?retryWrites=true';
+const dev_db_url = 'mongodb+srv://jossa:josafath1234@cluster0.olcxk.mongodb.net/music_db?retryWrites=true';
+const mongodb = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB Error Connection: '));
