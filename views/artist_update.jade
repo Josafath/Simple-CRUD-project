@@ -1,23 +1,27 @@
 extends layout 
 
+block extraHeader 
+  link(rel='stylesheet', href='/stylesheets/style_forms.css')
+
 block content
-    h1 #{title}
-    form(method = "POST" action= "")
-        div(class ="form-group")
-            label(for="title")
-                h6 Name:
-            input(type="text" class="form-control" name="name" id="title_id" placeholder="E.g: Ed Sheeran" required=true value=artist.name)
+    div(class="form_container")
+        h1 #{title}
+        form(method = "POST" action= "")
+            div(class ="form-group")
+                label(for="title")
+                    h6 Name:
+                input(type="text" class="form-control" name="name" id="title_id" placeholder="E.g: Ed Sheeran" required=true value=artist.name)
+
+                label(for="imagen_url")
+                    h6 Image URL:
+                input(type="text" class="form-control" name="imagen_url" id="imagen_url" placeholder="http://..." value= artist.img_url)
             
-            label(for="imagen_url")
-                h6 Image URL:
-            input(type="text" class="form-control" name="imagen_url" id="imagen_url" placeholder="http://..." value= artist.img_url)
-            
-            label(for="date_birth")
-                h6 Date of Birth:
-            input(type="date" class="form-control" name="birth_date" id="date_birth" required=true)
-            
-            label(for="date_death")
-                h6 Date of Death:
-            input(type="date" class="form-control" name="death_date" id="date_death")
-            br
-            button(type="submit" class="btn btn-info") Update
+                label(for="date_birth")
+                    h6 Date of Birth:
+                input(type="date" class="form-control" name="birth_date" id="date_birth" required=true)
+
+                label(for="date_death")
+                    h6 Date of Death:
+                input(type="date" class="form-control" name="death_date" id="date_death")
+                br
+                button(type="submit" class="btn btn-info") Update

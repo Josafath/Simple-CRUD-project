@@ -2,9 +2,9 @@ extends layout
 
 block content 
 
-    h1 #{title}
+    h1(style="margin-top:5%;") #{title}
     div(class="box_add")
-        div(class="boton_add") 
+        div(class="boton_add" style="margin-bottom: 5%;") 
             a(href="song/create") + Add
 
     if !songs.length

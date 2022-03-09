@@ -1,12 +1,13 @@
 extends layout 
-
+block extraHeader 
+  link(rel='stylesheet', href='/stylesheets/style_forms.css')
 block content
     h1 #{title}
-
-    form(method = "POST" action= "create")
-        div(class ="form-group")
-            label(for="first_name")
-                h6 Genre
-            input(type="text" class="form-control" name="name" id="genre_name" placeholder="E.g: Pop, R&B...")
-            br
-            button(type="submit" class="btn btn-success") Add Genre
+    div(class="form_container")
+        form(method = "POST" action= "create")
+            div(class ="form-group")
+                label(for="first_name")
+                    h6 Genre
+                input(type="text" class="form-control" name="name" id="genre_name" placeholder="E.g: Pop, R&B..."  autocomplete="off")
+                br
+                button(type="submit" class="btn btn-success") Add Genre

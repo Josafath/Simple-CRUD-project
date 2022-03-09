@@ -5,35 +5,24 @@ html(lang="en")
     meta(charset='utf-8')
     meta(name="description" content="Jossify. The side where you can manage your favorite music")
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="icon" href="/images/icon_music.ico")
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet")
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    block extraHeader
   body
-    div(class="sidenav")
-      div(class="container")
-        div(class="item")
-          div 
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          div 
-            a(href="/music/") Home
-        div(class="item")
-          div 
-            <svg xmlns="http://www.w3.org/2000/svg" id="imagen" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-          div 
-            a(href="/music/artist") Artists 
-        div(class="item")
-          div 
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none" opacity=".1"/><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
-          div 
-            a(href="/music/song") Songs
-        div(class="item")
-          div
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>
-          div 
-            a(href="/music/album") Albums 
-        div(class="item")
-          div 
-            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M15,6H3v2h12V6z M15,10H3v2h12V10z M3,16h8v-2H3V16z M17,6v8.18C16.69,14.07,16.35,14,16,14c-1.66,0-3,1.34-3,3s1.34,3,3,3 s3-1.34,3-3V8h3V6H17z"/></g></svg>
-          div 
-            a(href="/music/genre") Genres
+    input(type="checkbox" id="active")
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    div(class="wrapper")
+      ul
+        li <a href="/music/">Home</a>
+        li <a href="/music/artist">Artists</a>
+        li <a href="/music/song">Songs</a>
+        li <a href="/music/album">Albums</a>
+        li <a href="/music/genre">Genres</a>
+
     div(class="main")
       block content 

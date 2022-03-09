@@ -1,19 +1,20 @@
 extends layout 
-
+block extraHeader 
+  link(rel='stylesheet', href='/stylesheets/style_details.css')
 block content 
-
-    h1 #{title}
-    div(class="box_add")
-        div(class="boton_add") 
-            a(href="genre/create") + Add
-    if !genres.length
-        p(style="margin-top: 0.5em; text-align: center;") There are no Artists
+    div(class="form_container")
+        h1(style="margin-top:5%;") #{title}
+        div(class="box_add")
+            div(class="boton_add") 
+                a(href="genre/create") + Add
+        if !genres.length
+            p(style="margin-top: 0.5em; text-align: center;") There are no Artists
         
-        iframe(src="https://giphy.com/embed/Ho5KRBnCEQcLhLo8hB" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen)
+            iframe(src="https://giphy.com/embed/Ho5KRBnCEQcLhLo8hB" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen)
 
-    div(class="mycard_genres")
-        each genre in genres
-            div(class="shit_item")
-                a(href=genre.url) #{genre.name}
+        div(class="mycard_genres" style="margin-top:5%;")
+            each genre in genres
+                div(class="shit_item")
+                    a(href=genre.url) #{genre.name}
                     
                 

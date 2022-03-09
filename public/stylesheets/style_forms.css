@@ -1,0 +1,29 @@
+
+.form_container input[type=checkbox], input[type=radio] {
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.form_container {
+    margin: 15% 25% 0 25%;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.genre_container {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+.form_container input[type=submit]{
+    margin-top: 25%;
+}
+
+.botones_delete_update {
+    display: flex;
+    justify-content: space-evenly;
+}

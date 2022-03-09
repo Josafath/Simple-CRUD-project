@@ -1,0 +1,41 @@
+
+
+.webos {
+    display: flex;
+    width: 100%;
+    height: 100%;;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.webos .img_details img{ 
+    width: 250px;  
+    height: 200px;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+}
+
+.botones_delete_update {
+    display: flex;
+    justify-content: space-evenly;
+}
+.mycard_genres .shit_item {
+    padding: 8px;
+}
+
+
+@media screen and (max-width:640px), screen and (max-height: 340px) {
+    .main{ 
+        margin-top: 25%;
+    }
+    .boton_add{ 
+        margin-top: 15%;
+    }
+    h1 {
+        margin-top: 25%;
+    }
+}

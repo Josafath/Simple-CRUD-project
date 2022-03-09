@@ -2,18 +2,21 @@ extends layout
 
 block content 
 
-    h1 #{title}
-    div(class="box_add")
-        div(class="boton_add") 
-            a(href="artist/create") + Add
+    h1(style="margin-top:5%;") #{title}
+        div(class="box_add")
+            div(class="boton_add") 
+                a(href="artist/create") + Add
 
     div(class="container_things")    
+        
         each artist in artists
-            div(class="mycard")
-                div 
-                    img(src= artist.img_url alt="Artist Image")
-                div(class="text") 
-                    h5 #{artist.name} (#{artist.date_of_birth ? artist.date_of_birth.toISOString().split('T')[0] : ''} - #{artist.date_of_death ? artist.date_of_death.toISOString().split('T')[0] : ''})
+            div(class="a-box")
+                div(class="img-container")
+                    div(class="img-inner")                        
+                        div(class="inner-skew")
+                            img(src= artist.img_url alt="Artist Image")
+                div(class="text-container") 
+                    h3 #{artist.name} (#{artist.date_of_birth ? artist.date_of_birth.toISOString().split('T')[0] : ''} - #{artist.date_of_death ? artist.date_of_death.toISOString().split('T')[0] : ''})
                     a(href=artist.url class="btn btn-dark" role="button") Details
                     
                 

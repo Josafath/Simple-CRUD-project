@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  h1(style='text-align: center;')= title
-  p(style='text-align: center;') Make you learn how to manage your music only in #{title}
-
-  ul
-    li #[strong Artists:] !{data.artists_count}
-    li #[strong Songs:] !{data.songs_count}
-    li #[strong Albums:] !{data.albums_count}
-    li #[strong Genres:] !{data.genres_count}
+  
+  div(class="content")
+    div(class="title") 
+      h1(style='text-align: center;')= title 
+      ul
+        li #[strong Artists:] !{data.artists_count}
+        li #[strong Songs:] !{data.songs_count}
+        li #[strong Albums:] !{data.albums_count}
+        li #[strong Genres:] !{data.genres_count}
